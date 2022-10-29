@@ -37,7 +37,7 @@ const App = () => {
                 }
             }
         }
-        inRange();
+        prepare();
     }, [])
 
     return(
@@ -47,5 +47,3 @@ const App = () => {
     )
 
 }
-
-export default App;
