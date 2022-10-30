@@ -1,4 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
+import "./Scanningmodel.css"
+import Bgimage from "../assets/bg.png"
+import Catimg from "../assets/cat.png"
 
 import * as cocoSsd from "@tensorflow-models/coco-ssd";
 import "@tensorflow/tfjs";
@@ -127,11 +130,12 @@ const App = () => {
 
   return (
     <div>
-      <div>
+      <div className="stream-img">
         <video autoPlay playsInline muted ref={videoElement} />
+        <img className="dogImg" src={Bgimage} alt="bgimage"/>
       </div>
       <div>
-        <div>
+        <div className="buttons">
           <div>
             <button
               onClick={() => {
@@ -144,6 +148,7 @@ const App = () => {
             >
               Start
             </button>
+          
           </div>
           <div>
             <button
@@ -158,8 +163,11 @@ const App = () => {
               Stop
             </button>
           </div>
+          <div>
+          </div>
         </div>
-        <div className="row p-3">
+        <div className="recordings">
+        <img className="catImg" src={Catimg} alt="cat" />
           <h3>Records:</h3>
           {!records.length
             ? null

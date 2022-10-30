@@ -1,0 +1,28 @@
+body {
+}
+
+.stream-img {
+    margin: 3%;
+}
+
+.dogImg img {
+    position: absolute;
+}
+
+.catImg img {
+    left: 50%;
+}
+
+.recordings {
+    display: flex;
+}
+
+button {
+    padding: 20px;
+    margin: 0px 10px 10px 10px ;
+    display: flex;
+}
+
+.buttons {
+    display: flex;
+}

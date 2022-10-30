@@ -13,7 +13,11 @@ class About extends Component {
     fetch(`http://127.0.0.1:4000/send-text?recipient=${+19897560563}&textmessage="Attention!%20your%20dog%20just%20went%20out"%0A`)
       .catch(err => console.error(err))
   }
-      
+   render() {
+    return (
+      <p onLoad={this.sendText}></p>
+    )
+   }   
 }
 
 export default About;
