@@ -5,7 +5,7 @@ import Catimg from "../assets/cat.png"
 
 import * as cocoSsd from "@tensorflow-models/coco-ssd";
 import "@tensorflow/tfjs";
-import TwilioComp from "../Components/TwilioComp"
+// import TwilioComp from "../Components/TwilioComp"
 
 const App = () => {
   const [records, setRecords] = useState([]);
@@ -54,7 +54,7 @@ const App = () => {
 
     let Animal = false;
     for (let i = 0; i < predictions.length; i++) {
-      if (predictions[i].class === "dog" || predictions[i].class === "cat") {
+      if (predictions[i].class === "person" || predictions[i].class === "cat") {
         Animal = true;
       }
       console.log(predictions)
@@ -62,7 +62,8 @@ const App = () => {
 
     if (Animal) {
       startRecording();
-      TwilioComp()
+      // TwilioComp()
+      sendTest();
       lastDetectionsRef.current.push(true);
     } else if (lastDetectionsRef.current.filter(Boolean).length) {
       startRecording();
@@ -78,6 +79,11 @@ const App = () => {
     requestAnimationFrame(() => {
       detectFrame();
     });
+  }
+
+  function sendTest() {
+    fetch(`http://localhost:4000/send-text?recipient=${+16395712428}&textmessage="Attention!%20your%20dog%20just%20went%20out"%0A`)
+      .catch(err => console.error(err))
   }
 
   function startRecording() {
