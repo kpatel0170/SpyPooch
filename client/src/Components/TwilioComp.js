@@ -1,17 +1,19 @@
-import React, {Component} from "react"
+import {Component} from "react"
 
 class About extends Component {
-    state = {
-        text: {
-          recipient: '',
-          textmessage: '',
-          texternumber: '',
-        }
-      }   
-      sendText = _ => {
-        const { text } = this.state;
-        //pass text message GET variables via query string
-        fetch(`http://127.0.0.1:4000/send-text?recipient=${+13608001829}&textmessage=${text.textmessage}%0A&texternumber=${text.texternumber}%0A&texterCompany=${text.texterCompany}%0A&floorArea=${text.floorArea}%0A&cleanType=${text.cleanType}%0A&location=${text.location}%0A&service=${text.service}`)
-          .catch(err => console.error(err))
-      }
+   state = {
+    text: {
+      recipient: '',
+      textmessage: '',
+    }
+  }   
+  sendText = () => {
+    // const { text } = this.state;
+    //pass text message GET variables via query string
+    fetch(`http://127.0.0.1:4000/send-text?recipient=${+19897560563}&textmessage="Attention!%20your%20dog%20just%20went%20out"%0A`)
+      .catch(err => console.error(err))
+  }
+      
 }
+
+export default About;

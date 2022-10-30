@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 
 import * as cocoSsd from "@tensorflow-models/coco-ssd";
 import "@tensorflow/tfjs";
+import TwilioComp from "../Components/TwilioComp"
 
 const App = () => {
   const [records, setRecords] = useState([]);
@@ -58,6 +59,7 @@ const App = () => {
 
     if (Animal) {
       startRecording();
+      TwilioComp()
       lastDetectionsRef.current.push(true);
     } else if (lastDetectionsRef.current.filter(Boolean).length) {
       startRecording();
@@ -106,6 +108,22 @@ const App = () => {
     console.log("stopped recording");
     lastDetectionsRef.current = [];
   }
+
+
+  // const state = {
+  //   text: {
+  //     recipient: '',
+  //     textmessage: '',
+  //   }
+  // }   
+  // const sendText = () => {
+  //   const { text } = this.state;
+  //   //pass text message GET variables via query string
+  //   fetch(`http://127.0.0.1:4000/send-text?recipient=${+19897560563}&textmessage="Attention!%20your%20dog%20just%20went%20out"%0A`)
+  //     .catch(err => console.error(err))
+  // }
+
+
 
   return (
     <div>
