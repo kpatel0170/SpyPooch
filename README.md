@@ -3,7 +3,7 @@
 ## Inspiration
 We wanted to build something that's related to ML/AI. Then with the theme, we got the idea to make something that connects two different systems. If we have a pet in the house, it's very hard to give time to look in CAMERAS all the time when you are away from home. That's the point, we decided to discover something that can identify the activity and sends the notification to the phone number.
 ## What it does
-It keeps track of pets at home and notifies the client if there is any usual activity on their phone.
+It keeps track of pets at gate and notifies the client if they croses it.
 ## How we built it
 We build the ML model using TensorFlow JS and implemented the notification (message) feature using Twilio.
 ## Challenges we ran into
